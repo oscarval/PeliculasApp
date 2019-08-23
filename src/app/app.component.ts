@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { PeliculasService } from "./services/peliculas.service";
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,10 +7,7 @@ import { PeliculasService } from "./services/peliculas.service";
 })
 export class AppComponent {
 
-  constructor(public _ps:PeliculasService){
-    this._ps.getPopulares().subscribe( resp => {
-      console.log(resp);
-    });
+  constructor(){
   }
 
   title = 'app';

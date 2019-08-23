@@ -1,38 +1,186 @@
-<div class="container-fluid jumbotron jumbotron-fluid">
+<div class="container-fluid jumbotron jumbotron-fluid animated fadeIn fast">
   <div class="container">
     <h1 class="display-4">PelisApp</h1>
     <p class="lead">Esta es una app de películas</p>
   </div>
 </div>
 
-<div class="mt-5">
+<div class="mt-5 animated fadeIn fast">
   <h3>Películas en Cartelera</h3>
-  <div class="row">
+  <div class="container-fluid row">
     <div class="col-6">
       <div class="row">
-        imagen grande 1
+        <div class="col-12 p-0 ">
+          <img *ngIf="!loading" [src]=" urlimages400 + pelisCartelera[0].backdrop_path " class=" animated fadeIn fast w-100 img-fluid"
+            alt="Responsive image">
+          <div class="caption">
+            <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisCartelera[0].title}}</span>
+          </div>
+        </div>
       </div>
       <div class="row">
-        <div class="col-6">pequeña 1</div>
-        <div class="col-6">pequeña 2</div>
+        <div class="col-6 p-0">
+          <img *ngIf="!loading" [src]=" urlimages200 + pelisCartelera[1].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
+            alt="Responsive image">
+          <div class="caption">
+              <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisCartelera[1].title}}</span>
+          </div>
+        </div>
+        <div class="col-6 p-0">
+          <img *ngIf="!loading" [src]=" urlimages200 + pelisCartelera[2].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
+            alt="Responsive image">
+          <div class="caption">
+              <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisCartelera[2].title}}</span>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-6">
       <div class="row">
-        <div class="col-6">pequeña 3</div>
-        <div class="col-6">pequeña 4</div>
+        <div class="col-6 p-0">
+          <img *ngIf="!loading" [src]="urlimages200 + pelisCartelera[3].backdrop_path" class="animated fadeIn fast w-100 img-fluid"
+            alt="Responsive image">
+          <div class="caption">
+              <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisCartelera[3].title}}</span>
+          </div>
+        </div>
+        <div class="col-6 p-0">
+          <img *ngIf="!loading" [src]=" urlimages200 + pelisCartelera[4].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
+            alt="Responsive image">
+          <div class="caption">
+              <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisCartelera[4].title}}</span>
+          </div>
+        </div>
       </div>
       <div class="row">
-          imagen grande 2
+        <div class="col-12 p-0">
+          <img *ngIf="!loading" [src]=" urlimages400 + pelisCartelera[5].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
+            alt="Responsive image">
+          <div class="caption">
+              <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisCartelera[5].title}}</span>
+          </div>
         </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="mt-5">
+<div class="mt-5 animated fadeIn fast">
   <h3>Películas Populares</h3>
+  <div class="container-fluid row">
+      <div class="col-6">
+        <div class="row">
+          <div class="col-12 p-0 ">
+            <img *ngIf="!loading" [src]=" urlimages400 + pelisPopulares[0].backdrop_path " class=" animated fadeIn fast w-100 img-fluid"
+              alt="Responsive image">
+            <div class="caption">
+              <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisPopulares[0].title}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 p-0">
+            <img *ngIf="!loading" [src]=" urlimages200 + pelisPopulares[1].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
+              alt="Responsive image">
+            <div class="caption">
+                <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisPopulares[1].title}}</span>
+            </div>
+          </div>
+          <div class="col-6 p-0">
+            <img *ngIf="!loading" [src]=" urlimages200 + pelisPopulares[2].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
+              alt="Responsive image">
+            <div class="caption">
+                <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisPopulares[2].title}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <div class="col-6 p-0">
+            <img *ngIf="!loading" [src]="urlimages200 + pelisPopulares[3].backdrop_path" class="animated fadeIn fast w-100 img-fluid"
+              alt="Responsive image">
+            <div class="caption">
+                <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisPopulares[3].title}}</span>
+            </div>
+          </div>
+          <div class="col-6 p-0">
+            <img *ngIf="!loading" [src]=" urlimages200 + pelisPopulares[4].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
+              alt="Responsive image">
+            <div class="caption">
+                <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisPopulares[4].title}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 p-0">
+            <img *ngIf="!loading" [src]=" urlimages400 + pelisPopulares[5].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
+              alt="Responsive image">
+            <div class="caption">
+                <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisPopulares[5].title}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 
-<div class="mt-5">
+<div class="mt-5 animated fadeIn fast">
   <h3>Películas Infantiles</h3>
+  <div class="container-fluid row">
+      <div class="col-6">
+        <div class="row">
+          <div class="col-12 p-0 ">
+            <img *ngIf="!loading" [src]=" urlimages400 + pelisInfantiles[0].backdrop_path " class=" animated fadeIn fast w-100 img-fluid"
+              alt="Responsive image">
+            <div class="caption">
+              <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisInfantiles[0].title}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 p-0">
+            <img *ngIf="!loading" [src]=" urlimages200 + pelisInfantiles[1].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
+              alt="Responsive image">
+            <div class="caption">
+                <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisInfantiles[1].title}}</span>
+            </div>
+          </div>
+          <div class="col-6 p-0">
+            <img *ngIf="!loading" [src]=" urlimages200 + pelisInfantiles[2].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
+              alt="Responsive image">
+            <div class="caption">
+                <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisInfantiles[2].title}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <div class="col-6 p-0">
+            <img *ngIf="!loading" [src]="urlimages200 + pelisInfantiles[3].backdrop_path" class="animated fadeIn fast w-100 img-fluid"
+              alt="Responsive image">
+            <div class="caption">
+                <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisInfantiles[3].title}}</span>
+            </div>
+          </div>
+          <div class="col-6 p-0">
+            <img *ngIf="!loading" [src]=" urlimages200 + pelisInfantiles[4].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
+              alt="Responsive image">
+            <div class="caption">
+                <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisInfantiles[4].title}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 p-0">
+            <img *ngIf="!loading" [src]=" urlimages400 + pelisInfantiles[5].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
+              alt="Responsive image">
+            <div class="caption">
+                <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisInfantiles[5].title}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
