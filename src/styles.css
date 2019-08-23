@@ -37,3 +37,8 @@
   left: 2%;
   width: 100%;
 }
+
+
+.pointer{
+  cursor: pointer;
+}

@@ -10,7 +10,7 @@
   <div class="container-fluid row">
     <div class="col-6">
       <div class="row">
-        <div class="col-12 p-0 ">
+        <div class="pointer col-12 p-0 ">
           <img *ngIf="!loading" [src]=" urlimages400 + pelisCartelera[0].backdrop_path " class=" animated fadeIn fast w-100 img-fluid"
             alt="Responsive image">
           <div class="caption">
@@ -19,14 +19,14 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-6 p-0">
+        <div class="pointer col-6 p-0">
           <img *ngIf="!loading" [src]=" urlimages200 + pelisCartelera[1].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
             alt="Responsive image">
           <div class="caption">
               <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisCartelera[1].title}}</span>
           </div>
         </div>
-        <div class="col-6 p-0">
+        <div class="pointer col-6 p-0">
           <img *ngIf="!loading" [src]=" urlimages200 + pelisCartelera[2].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
             alt="Responsive image">
           <div class="caption">
@@ -37,14 +37,14 @@
     </div>
     <div class="col-6">
       <div class="row">
-        <div class="col-6 p-0">
+        <div class="pointer col-6 p-0">
           <img *ngIf="!loading" [src]="urlimages200 + pelisCartelera[3].backdrop_path" class="animated fadeIn fast w-100 img-fluid"
             alt="Responsive image">
           <div class="caption">
               <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisCartelera[3].title}}</span>
           </div>
         </div>
-        <div class="col-6 p-0">
+        <div class="pointer col-6 p-0">
           <img *ngIf="!loading" [src]=" urlimages200 + pelisCartelera[4].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
             alt="Responsive image">
           <div class="caption">
@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12 p-0">
+        <div class="pointer col-12 p-0">
           <img *ngIf="!loading" [src]=" urlimages400 + pelisCartelera[5].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
             alt="Responsive image">
           <div class="caption">
@@ -70,7 +70,7 @@
   <div class="container-fluid row">
       <div class="col-6">
         <div class="row">
-          <div class="col-12 p-0 ">
+          <div class="pointer col-12 p-0 ">
             <img *ngIf="!loading" [src]=" urlimages400 + pelisPopulares[0].backdrop_path " class=" animated fadeIn fast w-100 img-fluid"
               alt="Responsive image">
             <div class="caption">
@@ -79,14 +79,14 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-6 p-0">
+          <div class="pointer col-6 p-0">
             <img *ngIf="!loading" [src]=" urlimages200 + pelisPopulares[1].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
               alt="Responsive image">
             <div class="caption">
                 <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisPopulares[1].title}}</span>
             </div>
           </div>
-          <div class="col-6 p-0">
+          <div class="pointer col-6 p-0">
             <img *ngIf="!loading" [src]=" urlimages200 + pelisPopulares[2].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
               alt="Responsive image">
             <div class="caption">
@@ -97,14 +97,14 @@
       </div>
       <div class="col-6">
         <div class="row">
-          <div class="col-6 p-0">
+          <div class="pointer col-6 p-0">
             <img *ngIf="!loading" [src]="urlimages200 + pelisPopulares[3].backdrop_path" class="animated fadeIn fast w-100 img-fluid"
               alt="Responsive image">
             <div class="caption">
                 <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisPopulares[3].title}}</span>
             </div>
           </div>
-          <div class="col-6 p-0">
+          <div class="pointer col-6 p-0">
             <img *ngIf="!loading" [src]=" urlimages200 + pelisPopulares[4].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
               alt="Responsive image">
             <div class="caption">
@@ -113,7 +113,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12 p-0">
+          <div class="pointer col-12 p-0">
             <img *ngIf="!loading" [src]=" urlimages400 + pelisPopulares[5].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
               alt="Responsive image">
             <div class="caption">
@@ -130,8 +130,8 @@
   <div class="container-fluid row">
       <div class="col-6">
         <div class="row">
-          <div class="col-12 p-0 ">
-            <img *ngIf="!loading" [src]=" urlimages400 + pelisInfantiles[0].backdrop_path " class=" animated fadeIn fast w-100 img-fluid"
+          <div class="pointer col-12 p-0 " >
+            <img (click)="verPeli(pelisInfantiles[0].id)" *ngIf="!loading" [src]=" urlimages400 + pelisInfantiles[0].backdrop_path " class=" animated fadeIn fast w-100 img-fluid"
               alt="Responsive image">
             <div class="caption">
               <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisInfantiles[0].title}}</span>
@@ -139,14 +139,14 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-6 p-0">
+          <div class="pointer col-6 p-0">
             <img *ngIf="!loading" [src]=" urlimages200 + pelisInfantiles[1].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
               alt="Responsive image">
             <div class="caption">
                 <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisInfantiles[1].title}}</span>
             </div>
           </div>
-          <div class="col-6 p-0">
+          <div class="pointer col-6 p-0">
             <img *ngIf="!loading" [src]=" urlimages200 + pelisInfantiles[2].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
               alt="Responsive image">
             <div class="caption">
@@ -157,14 +157,14 @@
       </div>
       <div class="col-6">
         <div class="row">
-          <div class="col-6 p-0">
+          <div class="pointer col-6 p-0">
             <img *ngIf="!loading" [src]="urlimages200 + pelisInfantiles[3].backdrop_path" class="animated fadeIn fast w-100 img-fluid"
               alt="Responsive image">
             <div class="caption">
                 <span *ngIf="!loading" class="p-2 badge badge-secondary">{{pelisInfantiles[3].title}}</span>
             </div>
           </div>
-          <div class="col-6 p-0">
+          <div class="pointer col-6 p-0">
             <img *ngIf="!loading" [src]=" urlimages200 + pelisInfantiles[4].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
               alt="Responsive image">
             <div class="caption">
@@ -173,7 +173,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12 p-0">
+          <div class="pointer col-12 p-0">
             <img *ngIf="!loading" [src]=" urlimages400 + pelisInfantiles[5].backdrop_path " class="animated fadeIn fast w-100 img-fluid"
               alt="Responsive image">
             <div class="caption">

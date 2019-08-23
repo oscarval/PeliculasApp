@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PeliculasService } from "../../services/peliculas.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-peliculas',
@@ -15,7 +16,10 @@ export class PeliculasComponent implements OnInit {
   public pelisInfantiles: any[] = [];
   public loading:boolean;
 
-  constructor(public pelisservices:PeliculasService) {
+  constructor(
+    public pelisservices:PeliculasService,
+    private route:Router
+    ) {
     this.loading = true;
     this.urlimages400 = "http://image.tmdb.org/t/p/w400";
     this.urlimages200 = "http://image.tmdb.org/t/p/w200";
@@ -51,6 +55,10 @@ export class PeliculasComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  verPeli(id:string){
+    this.route.navigate( ['pelicula', id] );
   }
 
 }
