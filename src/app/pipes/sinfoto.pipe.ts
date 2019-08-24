@@ -5,11 +5,19 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SinfotoPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    if( !value){
-      return "assets/img/noimage.png";
+  transform(pelicula: any, args?: any): any {
+
+    let url = "http://image.tmdb.org/t/p/w500";
+    if( pelicula && pelicula.backdrop_path ){
+      return url + pelicula.backdrop_path
     }
-    return ( value.length > 0 ) ? value : "assets/img/noimage.png";
+    else{
+      if(pelicula && pelicula.poster_path){
+        return url + pelicula.poster_path
+      }else{
+        return "assets/img/noimage.png";
+      }
+    }
   }
 
 }
