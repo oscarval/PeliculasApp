@@ -11,7 +11,7 @@ export class PeliculasComponent implements OnInit {
 
   public urlimages400:string;
   public urlimages200:string;
-  public pelisCartelera: any[] = [];
+  public pelisCartelera: any = [];
   public pelisPopulares: any[] = [];
   public pelisInfantiles: any[] = [];
   public loading:boolean;
@@ -58,7 +58,7 @@ export class PeliculasComponent implements OnInit {
   }
 
   verPeli(id:string){
-    this.route.navigate( ['pelicula', id] );
+    this.route.navigate( ['pelicula', id, 'peliculas'] );
   }
 
 }

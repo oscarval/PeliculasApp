@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
 
 const app_routes: Routes = [
   { path: 'peliculas', component: PeliculasComponent },
-  { path: 'pelicula/:id', component: PeliculaComponent },
+  { path: 'pelicula/:id/:path', component: PeliculaComponent },
+  { path: 'pelicula/:id/:path/:search', component: PeliculaComponent },
   { path: 'buscar', component: BuscarComponent },
   { path: 'buscar/:term', component: BuscarComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'peliculas' }

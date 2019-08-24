@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { JsonpModule, HttpModule } from "@angular/http";
 
 import { APP_ROUTING } from './app.routes';
@@ -15,6 +15,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 // services
 import { PeliculasService } from "./services/peliculas.service";
 
+// Pipes
+import { SinfotoPipe } from './pipes/sinfoto.pipe';
+
 
 @NgModule({
   declarations: [
@@ -22,16 +25,21 @@ import { PeliculasService } from "./services/peliculas.service";
     PeliculasComponent,
     PeliculaComponent,
     BuscarComponent,
-    NavbarComponent
+    NavbarComponent,
+    SinfotoPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     JsonpModule,
     HttpModule,
+    ReactiveFormsModule,
     APP_ROUTING
   ],
   providers: [PeliculasService],
+  exports : [
+    ReactiveFormsModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

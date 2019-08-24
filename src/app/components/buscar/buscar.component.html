@@ -1,3 +1,30 @@
-<p>
-  buscar works!
-</p>
+<div class="container">
+  <form [formGroup]="forma" (ngSubmit)="buscar()">
+    <div class="form-group">
+      <label>Buscar</label>
+      <input (keypress.enter)="buscar()" class="form-control" type="text" placeholder="Escriba texto para buscar"
+        formControlName="tex" required>
+      <div *ngIf="forma.controls['tex'].invalid && (forma.controls['tex'].dirty || forma.controls['tex'].touched)">
+        <div *ngIf="forma.controls['tex'].errors.minlength && forma.controls['tex'].touched">
+          Escrtiba por lo menos {{forma.controls['tex'].errors.minlength.requiredLength}} caracteres para buscar
+        </div>
+      </div>
+
+    </div>
+  </form>
+
+  <!-- result of serach -->
+  <div class="card-columns animated fadeIn fast">
+
+      <div class="card animated fadeIn fast" *ngFor="let peli of pelis">
+        <img class="card-img-top" src="{{ (peli.backdrop_path ? urlimages+peli.backdrop_path: peli.poster_path ? urlimages+peli.poster_path : null) | sinfoto }}" alt="peli.title">
+        <div class="card-body">
+          <h5 class="card-title">{{peli.title}}</h5>
+          <p class="card-text">{{peli.overview | slice:0:150}}</p>
+          <p class="card-text"><button [routerLink]="['/pelicula',peli.id,'buscar',forma.value.tex ]" class="btn btn-block btn-primary">Leer mas...</button></p>
+        </div>
+      </div>
+
+    </div>
+
+</div>
