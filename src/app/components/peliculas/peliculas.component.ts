@@ -9,20 +9,14 @@ import { Router } from '@angular/router';
 })
 export class PeliculasComponent implements OnInit {
 
-  public urlimages400:string;
-  public urlimages200:string;
   public pelisCartelera: any = [];
   public pelisPopulares: any[] = [];
   public pelisInfantiles: any[] = [];
-  public loading:boolean;
 
   constructor(
     public pelisservices:PeliculasService,
     private route:Router
     ) {
-    this.loading = true;
-    this.urlimages400 = "http://image.tmdb.org/t/p/w400";
-    this.urlimages200 = "http://image.tmdb.org/t/p/w200";
     this.pelisservices.getCartelera().subscribe( resp =>{
       console.log(resp);
       if(resp.results.length > 0){
@@ -31,7 +25,6 @@ export class PeliculasComponent implements OnInit {
           this.pelisCartelera.push(peli);
         }
       }
-      // this.loading = false;
     });
     this.pelisservices.getPopulares().subscribe( resp =>{
       if(resp.results.length > 0){
@@ -40,7 +33,7 @@ export class PeliculasComponent implements OnInit {
           this.pelisPopulares.push(peli);
         }
       }
-      // this.loading = false;
+
     });
     this.pelisservices.getInfantiles().subscribe( resp =>{
       if(resp.results.length > 0){
@@ -49,7 +42,7 @@ export class PeliculasComponent implements OnInit {
           this.pelisInfantiles.push(peli);
         }
       }
-      this.loading = false;
+
     });
   }
 
@@ -57,8 +50,5 @@ export class PeliculasComponent implements OnInit {
 
   }
 
-  verPeli(id:string){
-    this.route.navigate( ['pelicula', id, 'peliculas'] );
-  }
 
 }

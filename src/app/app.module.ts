@@ -17,6 +17,7 @@ import { PeliculasService } from "./services/peliculas.service";
 
 // Pipes
 import { SinfotoPipe } from './pipes/sinfoto.pipe';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { SinfotoPipe } from './pipes/sinfoto.pipe';
     PeliculaComponent,
     BuscarComponent,
     NavbarComponent,
-    SinfotoPipe
+    SinfotoPipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

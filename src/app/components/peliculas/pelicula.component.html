@@ -2,7 +2,7 @@
 <div  class="container mt-5 animated fadeIn fast">
   <h3 >{{ peli.title }}</h3>
     <div class="media">
-        <img  class="mr-3" [src]="peliImage | sinfoto" [alt]="peli.title">
+        <img  class="mr-3" [src]="peli | sinfoto:'pp' " [alt]="peli.title">
         <div class="media-body">
           <h5 class="mt-1">Sinopsis</h5>
           {{ peli.overview }}
