@@ -9,7 +9,7 @@
           <h5 class="mt-1">Frase Celebre</h5>
           {{ peli.tagline }}
           <div class="mt-2 mb-2">
-            Popularidad: <span class="badge  badge-primary">{{ peli.popularity | number }}</span>
+            Popularidad: <span class="badge  badge-primary">{{ peli.popularity | number:'.0-0' }}/10</span>
             <br>
             Voto promedio: <span class="badge  badge-primary">{{peli.vote_average | number }}</span>
           </div>
